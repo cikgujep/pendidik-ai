@@ -127,17 +127,12 @@
         let enemySpeed = 2;
 
         function drawPlayer() {
-            ctx.fillStyle = '#6366f1';
-            ctx.beginPath();
-            ctx.moveTo(player.x + player.w / 2, player.y);
-            ctx.lineTo(player.x, player.y + player.h);
-            ctx.lineTo(player.x + player.w, player.y + player.h);
-            ctx.closePath();
-            ctx.fill();
-            
-            // Add some glow
             ctx.shadowBlur = 15;
             ctx.shadowColor = '#6366f1';
+            ctx.font = '50px serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🪰', player.x + player.w / 2, player.y + player.h / 2);
         }
 
         function drawBullets() {
@@ -152,10 +147,13 @@
         }
 
         function drawEnemies() {
-            ctx.fillStyle = '#ef4444';
+            ctx.shadowBlur = 10;
             ctx.shadowColor = '#ef4444';
+            ctx.font = '40px serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
             enemies.forEach((e, index) => {
-                ctx.fillRect(e.x, e.y, e.w, e.h);
+                ctx.fillText('🩻', e.x + e.w / 2, e.y + e.h / 2);
                 e.y += enemySpeed;
 
                 // Collision with player
