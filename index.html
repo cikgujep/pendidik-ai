@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendidik AI Hub | Transformasi Digital</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Plus Jakarta Sans (Moden & Geometrik) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Outfit"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        },
+                        accent: {
+                            500: '#14b8a6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="antialiased selection:bg-brand-100 selection:text-brand-700">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2 cursor-pointer group" onclick="scrollToSection('pengenalan')">
+                <div
+                    class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-200 transition-transform group-hover:scale-105">
+                    <span class="font-display font-bold text-lg">AI</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-bold text-lg text-slate-800 leading-tight">Pendidik<span
+                            class="text-brand-600"> AI</span></span>
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Edisi 2026</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-1 bg-slate-50/50 p-1 rounded-full border border-slate-100">
+                <button onclick="scrollToSection('pengenalan')"
+                    class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all">Utama</button>
+                <button onclick="scrollToSection('modul')"
+                    class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all">Modul</button>
+                
+                <!-- Dropdown Kuasai AI -->
+                <div class="relative group">
+                    <button class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all flex items-center gap-1">
+                        Kuasai AI <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 p-2 transform origin-top scale-95 group-hover:scale-100">
+                        <a href="generatif_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Generatif</a>
+                        <a href="visual_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Visual</a>
+                        <a href="audio_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Audio</a>
+                        <a href="video_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Video</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown Explorasi AI -->
+                <div class="relative group">
+                    <button class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all flex items-center gap-1">
+                        Explorasi AI <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 p-2 transform origin-top scale-95 group-hover:scale-100">
+                        <a href="explorasi_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Laman Hub</a>
+                        <a href="explorasi_imej.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Explorasi Imej</a>
+                        <a href="explorasi_notebook.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">NotebookLM</a>
+                        <a href="explorasi_canvas.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Gemini Canvas</a>
+                        <a href="explorasi_gems.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Gemini Gems</a>
+                        <a href="explorasi_laman.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Laman Pembelajaran</a>
+                        <a href="explorasi_storybook.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors font-bold">Buku Cerita AI</a>
+                        <a href="juara_lagu.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Juara Lagu (Suno)</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown AI Junior -->
+                <div class="relative group">
+                    <button class="px-5 py-2 text-sm font-bold text-teal-600 hover:bg-teal-50 rounded-full transition-all flex items-center gap-1 group">
+                        AI Junior <span class="bg-teal-100 text-[8px] px-1.5 py-0.5 rounded-full transition-colors group-hover:bg-teal-200">KIDS</span> <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full right-0 md:left-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-teal-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 p-2 transform origin-top scale-95 group-hover:scale-100">
+                        <a href="ai_junior.html" class="block px-4 py-2.5 text-sm font-bold text-teal-600 hover:bg-teal-50 rounded-xl transition-colors">Hub Junior</a>
+                        <a href="ai_junior_autodraw.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-teal-600 hover:bg-teal-50 rounded-xl transition-colors">AutoDraw</a>
+                        <a href="ai_junior_citacita.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-teal-600 hover:bg-teal-50 rounded-xl transition-colors">Cita-cita</a>
+                        <a href="ai_junior_game.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-teal-600 hover:bg-teal-50 rounded-xl transition-colors">Bina Game AI</a>
+                    </div>
+                </div>
+
+                <button onclick="scrollToSection('guestbook')"
+                    class="px-5 py-2 text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-full shadow-md shadow-brand-200 transition-all">Buku
+                    Pelawat</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20 overflow-hidden">
+
+        <!-- Hero Section -->
+        <section id="pengenalan" class="relative py-20 lg:py-32 bg-slate-50">
+            <!-- Decorative Background -->
+            <div class="blob bg-blue-200 w-96 h-96 rounded-full top-0 left-0 mix-blend-multiply animate-blob"></div>
+            <div
+                class="blob bg-purple-200 w-96 h-96 rounded-full top-0 right-0 mix-blend-multiply animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="blob bg-teal-100 w-96 h-96 rounded-full -bottom-32 left-20 mix-blend-multiply animate-blob animation-delay-4000">
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-brand-100 shadow-sm mb-8">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                        </span>
+                        <span class="text-xs font-bold text-brand-600 tracking-wide uppercase">Revolusi Pendidikan
+                            5.0</span>
+                    </div>
+
+                    <h1
+                        class="font-display text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
+                        Transformasi Pengajaran <br>
+                        <span id="typewriter-text" class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-500"></span><span class="type-cursor text-brand-600">|</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+                        Tingkatkan kualiti pendidikan dengan teknologi terkini. Kami membantu pendidik menguasai alatan
+                        AI untuk bilik darjah masa hadapan.
+                    </p>
+
+                    <!-- Profile Thumbnail Restored & Styled -->
+                    <div class="flex items-center justify-center gap-4 mb-10" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative group">
+                            <div
+                                class="absolute inset-0 bg-brand-400 rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                            </div>
+                            <img src="assets/img/cikgu_mie.jpg"
+                                alt="Cikgu Mie"
+                                class="relative w-16 h-16 rounded-full border-4 border-white shadow-card object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="text-left">
+                            <p class="text-[10px] font-bold text-brand-600 uppercase tracking-widest mb-0.5">Dibawakan
+                                Oleh</p>
+                            <p class="text-slate-900 font-display font-bold text-lg leading-none">Cikgu Mie</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="scrollToSection('alatan')"
+                            class="px-8 py-4 bg-brand-600 text-white rounded-2xl font-bold hover:bg-brand-700 transition shadow-xl shadow-brand-200 flex items-center justify-center gap-2 group">
+                            Mula Teroka
+                            <i data-lucide="arrow-right"
+                                class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button onclick="scrollToSection('video-intro')"
+                            class="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-2xl font-bold hover:bg-slate-50 hover:border-slate-300 transition flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="play-circle" class="w-5 h-5 text-brand-600"></i>
+                            Tonton Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video-intro" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-5xl mx-auto" data-aos="zoom-in-up">
+                    <div class="bg-slate-100 p-2 rounded-[2rem] shadow-soft border border-slate-200">
+                        <div class="relative aspect-video rounded-[1.5rem] overflow-hidden bg-slate-900 shadow-inner">
+                            <!-- YouTube Embed -->
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/ad79nYk2keg?rel=0&modestbranding=1"
+                                title="Pengenalan AI" 
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 border-t border-slate-100 pt-12">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                        <h3 class="text-4xl font-extrabold text-slate-900 mb-1">500+</h3>
+                        <p class="text-slate-500 font-medium text-sm">Pendidik Dilatih</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-4xl font-extrabold text-slate-900 mb-1">20+</h3>
+                        <p class="text-slate-500 font-medium text-sm">Modul AI</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-4xl font-extrabold text-slate-900 mb-1">100%</h3>
+                        <p class="text-slate-500 font-medium text-sm">Akses Percuma</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-4xl font-extrabold text-slate-900 mb-1">24/7</h3>
+                        <p class="text-slate-500 font-medium text-sm">Sokongan Komuniti</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modul Carousel -->
+        <section id="modul" class="py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up">
+                    <span
+                        class="text-brand-600 font-bold tracking-wider text-xs uppercase bg-brand-50 px-3 py-1 rounded-full">Kurikulum</span>
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mt-4 text-slate-900">Modul Transformasi</h2>
+                    <p class="text-slate-600 mt-4">Tiga tonggak utama dalam mengintegrasikan teknologi kecerdasan buatan
+                        ke dalam bilik darjah.</p>
+                </div>
+
+                <div class="relative max-w-5xl mx-auto bg-white rounded-[2rem] shadow-soft p-2 border border-white"
+                    data-aos="fade-up">
+                    <div id="carousel-inner"
+                        class="relative aspect-[16/10] md:aspect-[21/9] rounded-[1.5rem] overflow-hidden">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item absolute inset-0 opacity-100 transition-opacity duration-700">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070"
+                                class="w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex flex-col justify-end p-10">
+                                <div
+                                    class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl max-w-2xl">
+                                    <span
+                                        class="text-accent-500 font-bold text-xs uppercase tracking-wider mb-2 block">Modul
+                                        1</span>
+                                    <h3 class="text-2xl font-bold text-white mb-2">Produktiviti Guru</h3>
+                                    <p class="text-slate-200 text-sm leading-relaxed">Automatikkan tugasan pentadbiran
+                                        dan RPH untuk fokus kembali kepada pengajaran.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-700">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070"
+                                class="w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex flex-col justify-end p-10">
+                                <div
+                                    class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl max-w-2xl">
+                                    <span
+                                        class="text-purple-400 font-bold text-xs uppercase tracking-wider mb-2 block">Modul
+                                        2</span>
+                                    <h3 class="text-2xl font-bold text-white mb-2">Pembelajaran Adaptif</h3>
+                                    <p class="text-slate-200 text-sm leading-relaxed">Personalosasikan pengalaman
+                                        pembelajaran untuk setiap murid menggunakan data analitik.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-700">
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974"
+                                class="w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex flex-col justify-end p-10">
+                                <div
+                                    class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl max-w-2xl">
+                                    <span
+                                        class="text-orange-400 font-bold text-xs uppercase tracking-wider mb-2 block">Modul
+                                        3</span>
+                                    <h3 class="text-2xl font-bold text-white mb-2">Kandungan Kreatif</h3>
+                                    <p class="text-slate-200 text-sm leading-relaxed">Jana bahan bantu mengajar visual,
+                                        audio, dan video dalam masa beberapa minit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="absolute bottom-8 right-8 flex gap-2 z-20">
+                        <button onclick="prevSlide()"
+                            class="w-10 h-10 bg-white text-slate-800 hover:bg-brand-600 hover:text-white rounded-full flex items-center justify-center transition shadow-lg"><i
+                                data-lucide="arrow-left" class="w-5 h-5"></i></button>
+                        <button onclick="nextSlide()"
+                            class="w-10 h-10 bg-white text-slate-800 hover:bg-brand-600 hover:text-white rounded-full flex items-center justify-center transition shadow-lg"><i
+                                data-lucide="arrow-right" class="w-5 h-5"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <section id="alatan" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-slate-100 pb-8">
+                    <div data-aos="fade-right">
+                        <h2 class="font-display text-3xl md:text-4xl font-bold text-slate-900">Kotak Peralatan Digital
+                        </h2>
+                        <p class="text-slate-500 mt-2 text-lg">Aplikasi AI terpilih untuk kegunaan bilik darjah.</p>
+                    </div>
+                    <div class="mt-4 md:mt-0">
+                        <button onclick="scrollToSection('alatan')"
+                            class="text-brand-600 font-bold flex items-center gap-2 hover:gap-3 transition-all bg-brand-50 px-4 py-2 rounded-lg">Lihat
+                            Semua <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                    </div>
+                </div>
+
+                <!-- Responsive Grid Container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1: AI Teks -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-card hover-lift group cursor-pointer h-full flex flex-col"
+                        data-aos="fade-up" data-aos-delay="0">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ai_text.png" alt="AI Teks" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-0 -mt-8 relative z-10 flex flex-col flex-grow">
+                            <div
+                                class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors shadow-lg">
+                                <i data-lucide="type" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">AI Teks</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed flex-grow">Penjana RPH, soalan kuiz, dan surat
+                                rasmi automatik.</p>
+                            <div class="mt-6 pt-6 border-t border-slate-50 flex flex-wrap gap-3">
+                                <button
+                                    onclick="openModal('AI Teks', 'Fungsi: Menjana teks. \nContoh: ChatGPT, Claude, Gemini. \nKegunaan: Membantu guru merangka soalan KBAT, membina rubrik pentaksiran, dan menulis ulasan pelajar dengan pantas.')"
+                                    class="text-sm font-bold text-brand-600 flex items-center gap-2">Info <i
+                                        data-lucide="plus-circle" class="w-4 h-4"></i></button>
+                                <a href="generatif_ai.html"
+                                    class="text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 px-4 py-2 rounded-lg transition-colors shadow-sm">
+                                    Buka Modul
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: AI Visual -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-card hover-lift group cursor-pointer h-full flex flex-col"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ai_visual.png" alt="AI Visual" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-0 -mt-8 relative z-10 flex flex-col flex-grow">
+                            <div
+                                class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center text-accent-500 mb-6 group-hover:bg-accent-500 group-hover:text-white transition-colors shadow-lg">
+                                <i data-lucide="image" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">AI Visual</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed flex-grow">Menghasil poster, ilustrasi
+                                saintifik, dan grafik tanpa hak cipta.</p>
+                            <div class="mt-6 pt-6 border-t border-slate-50 flex flex-wrap gap-3">
+                                <button
+                                    onclick="openModal('AI Visual', 'Fungsi: Menjana Imej. \nContoh: Midjourney, Bing Image Creator. \nKegunaan: Mencipta bahan bantu mengajar visual yang unik untuk menarik minat pelajar visual.')"
+                                    class="text-sm font-bold text-accent-500 flex items-center gap-2">Info <i
+                                        data-lucide="plus-circle" class="w-4 h-4"></i></button>
+                                <a href="visual_ai.html"
+                                    class="text-sm font-bold text-white bg-accent-500 hover:bg-teal-600 px-4 py-2 rounded-lg transition-colors shadow-sm">
+                                    Buka Modul
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: AI Suara -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-card hover-lift group cursor-pointer h-full flex flex-col"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ai_audio.png" alt="AI Suara" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-0 -mt-8 relative z-10 flex flex-col flex-grow">
+                            <div
+                                class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors shadow-lg">
+                                <i data-lucide="mic" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">AI Suara</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed flex-grow">Tukar teks ke audio (TTS) dan klon
+                                suara untuk e-buku.</p>
+                            <div class="mt-6 pt-6 border-t border-slate-50 flex flex-wrap gap-3">
+                                <button
+                                    onclick="openModal('AI Suara', 'Fungsi: Audio sintetik. \nContoh: ElevenLabs. \nKegunaan: Menyediakan bahan bacaan audio untuk pelajar disleksia atau menghasilkan podcast pendidikan.')"
+                                    class="text-sm font-bold text-orange-600 flex items-center gap-2">Info <i
+                                        data-lucide="plus-circle" class="w-4 h-4"></i></button>
+                                <a href="audio_ai.html"
+                                    class="text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-lg transition-colors shadow-sm">
+                                    Buka Modul
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: AI Video -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-card hover-lift group cursor-pointer h-full flex flex-col"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ai_video.png" alt="AI Video" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-0 -mt-8 relative z-10 flex flex-col flex-grow">
+                            <div
+                                class="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-600 mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors shadow-lg">
+                                <i data-lucide="video" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">AI Video</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed flex-grow">Video pengajaran dengan avatar
+                                penyampai maya.</p>
+                            <div class="mt-6 pt-6 border-t border-slate-50 flex flex-wrap gap-3">
+                                <button
+                                    onclick="openModal('AI Video', 'Fungsi: Penjana Video. \nContoh: HeyGen, D-ID. \nKegunaan: Menghasilkan video penerangan topik tanpa perlu peralatan kamera yang mahal.')"
+                                    class="text-sm font-bold text-pink-600 flex items-center gap-2">Info <i
+                                        data-lucide="plus-circle" class="w-4 h-4"></i></button>
+                                <a href="video_ai.html"
+                                    class="text-sm font-bold text-white bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg transition-colors shadow-sm">
+                                    Buka Modul
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guestbook -->
+        <section id="guestbook" class="py-24 bg-slate-50 border-t border-slate-200">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Form Side -->
+                    <div class="w-full lg:w-1/3">
+                        <div class="sticky top-28">
+                            <div class="mb-8">
+                                <span class="text-brand-600 font-bold text-xs uppercase tracking-wider">Komuniti</span>
+                                <h2 class="font-display text-3xl font-bold text-slate-900 mt-2">Buku Pelawat</h2>
+                                <p class="text-slate-500 mt-3 text-sm leading-relaxed">Tinggalkan jejak anda. Kongsikan
+                                    pandangan atau pengalaman mengenai platform ini.</p>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-3xl shadow-soft border border-slate-100">
+                                <form id="guestbook-form" class="space-y-5">
+                                    <div>
+                                        <label class="block text-slate-700 text-xs font-bold uppercase mb-2 ml-1">Nama
+                                            Penuh</label>
+                                        <div class="relative">
+                                            <i data-lucide="user"
+                                                class="absolute left-4 top-3.5 w-5 h-5 text-slate-400"></i>
+                                            <input type="text" name="nama"
+                                                class="modern-input w-full pl-12 pr-4 py-3 rounded-xl text-slate-800 text-sm font-medium"
+                                                required placeholder="Nama Pendidik">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-slate-700 text-xs font-bold uppercase mb-2 ml-1">Sekolah /
+                                            Organisasi</label>
+                                        <div class="relative">
+                                            <i data-lucide="building-2"
+                                                class="absolute left-4 top-3.5 w-5 h-5 text-slate-400"></i>
+                                            <input type="text" name="dari"
+                                                class="modern-input w-full pl-12 pr-4 py-3 rounded-xl text-slate-800 text-sm font-medium"
+                                                required placeholder="Nama Sekolah">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-slate-700 text-xs font-bold uppercase mb-2 ml-1">Ucapan</label>
+                                        <textarea name="ucapan" rows="4"
+                                            class="modern-input w-full px-4 py-3 rounded-xl text-slate-800 text-sm font-medium"
+                                            required placeholder="Tulis pesanan di sini..."></textarea>
+                                    </div>
+                                    <button type="submit" id="submit-btn"
+                                        class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-brand-600 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-slate-200 hover:shadow-brand-200 transform hover:-translate-y-1">
+                                        <span id="btn-text">Hantar Ucapan</span>
+                                        <i data-lucide="send" class="w-4 h-4"></i>
+                                    </button>
+                                    <div id="status-message" class="text-center text-sm font-medium mt-2 min-h-[20px]">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- List Side -->
+                    <div class="w-full lg:w-2/3">
+                        <div class="flex justify-between items-center mb-8">
+                            <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2"><i
+                                    data-lucide="message-square" class="w-5 h-5 text-brand-600"></i> Pesanan Terkini
+                            </h3>
+                            <div id="pagination-controls" class="hidden gap-2">
+                                <button id="prev-btn-guestbook"
+                                    class="p-2 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 text-slate-600 disabled:opacity-50 transition"><i
+                                        data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                                <span id="page-info"
+                                    class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-700 flex items-center shadow-sm">1
+                                    / 1</span>
+                                <button id="next-btn-guestbook"
+                                    class="p-2 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 text-slate-600 disabled:opacity-50 transition"><i
+                                        data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                            </div>
+                        </div>
+
+                        <div id="loading" class="py-12 text-center">
+                            <div
+                                class="inline-block w-8 h-8 border-4 border-slate-200 border-t-brand-600 rounded-full animate-spin mb-3">
+                            </div>
+                            <p class="text-slate-500 text-sm font-medium">Memuat turun data...</p>
+                        </div>
+
+                        <div id="messages-container" class="testimonial-grid p-1">
+                            <!-- Messages injected here via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-2 mb-6">
+                <div
+                    class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold shadow-md">
+                    AI</div>
+                <span class="font-display font-bold text-slate-800 text-lg">Pendidik AI</span>
+            </div>
+            <div class="flex justify-center gap-6 mb-8">
+                <button class="p-2 text-slate-400 hover:text-brand-600 hover:bg-brand-50 rounded-full transition"><i
+                        data-lucide="facebook" class="w-5 h-5"></i></button>
+                <button class="p-2 text-slate-400 hover:text-brand-600 hover:bg-brand-50 rounded-full transition"><i
+                        data-lucide="twitter" class="w-5 h-5"></i></button>
+                <button class="p-2 text-slate-400 hover:text-brand-600 hover:bg-brand-50 rounded-full transition"><i
+                        data-lucide="instagram" class="w-5 h-5"></i></button>
+                <button class="p-2 text-slate-400 hover:text-brand-600 hover:bg-brand-50 rounded-full transition"><i
+                        data-lucide="youtube" class="w-5 h-5"></i></button>
+            </div>
+            <p class="text-slate-400 text-sm font-medium">&copy; 2026 Pendidik AI. Hak Cipta Terpelihara.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal-overlay"
+        class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4 hidden z-[100] transition-opacity duration-300 opacity-0">
+        <div id="modal-box"
+            class="bg-white rounded-[1.5rem] shadow-2xl p-8 max-w-md w-full transform scale-95 transition-transform duration-300 border border-white">
+            <div class="flex justify-between items-start mb-6">
+                <div
+                    class="w-12 h-12 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 border border-brand-100">
+                    <i data-lucide="info" class="w-6 h-6"></i>
+                </div>
+                <button onclick="closeModal()"
+                    class="text-slate-400 hover:text-red-500 transition bg-slate-50 p-2 rounded-full hover:bg-red-50"><i
+                        data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <h2 id="modal-title" class="text-2xl font-bold text-slate-900 mb-4 font-display">Title</h2>
+            <div id="modal-body" class="text-slate-600 leading-relaxed whitespace-pre-line text-sm">Content</div>
+            <button onclick="closeModal()"
+                class="mt-8 w-full py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Vendor Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/guestbook.js"></script>
+
+    <script>
+        // Carousel Logic (Keep only what is specific to this page)
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        function nextSlide() { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); }
+        function prevSlide() { currentSlide = (currentSlide - 1 + slides.length) % slides.length; showSlide(currentSlide); }
+        setInterval(nextSlide, 6000);
+    </script>
+</body>
+
+</html>
