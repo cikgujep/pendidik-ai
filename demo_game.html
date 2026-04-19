@@ -80,6 +80,37 @@
             border: 1px solid #334155;
             border-radius: 8px;
             background: rgba(30, 41, 59, 0.5);
+            z-index: 100;
+        }
+
+        #gyro-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            display: none;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+
+        @media (max-width: 600px) {
+            .score { font-size: 18px; }
+            .controls { font-size: 12px; text-align: center; padding: 0 20px; }
         }
     </style>
 </head>
@@ -94,8 +125,10 @@
     <canvas id="gameCanvas" width="600" height="800"></canvas>
 
     <div class="controls">
-        Gunakan <b>Arrow Kiri/Kanan</b> untuk gerak, <b>Space</b> untuk tembak!
+        <b>Desktop:</b> Arrow Kiri/Kanan & Space | <b>Mobile:</b> Tilton (Gyro) & Sentuh Skrin
     </div>
+
+    <button id="gyro-btn" onclick="requestGyro()">Aktifkan Gyro / Tilt</button>
 
     <div id="game-over">
         <h1>GAME OVER</h1>
@@ -237,13 +270,60 @@
             if (e.key === 'ArrowLeft') player.dx = -player.speed;
             if (e.key === 'ArrowRight') player.dx = player.speed;
             if (e.key === ' ' || e.key === 'Spacebar') {
-                bullets.push({ x: player.x + player.w / 2 - 2, y: player.y, w: 4, h: 10 });
+                fireBullet();
             }
         });
 
         document.addEventListener('keyup', (e) => {
             if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') player.dx = 0;
         });
+
+        function fireBullet() {
+            bullets.push({ x: player.x + player.w / 2 - 2, y: player.y, w: 4, h: 10 });
+        }
+
+        // Touch/Mouse Controls
+        canvas.addEventListener('mousedown', (e) => {
+            if (!gameOver) fireBullet();
+        });
+
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            if (!gameOver) fireBullet();
+        }, { passive: false });
+
+        // Gyroscope / Device Orientation
+        function requestGyro() {
+            if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+                DeviceOrientationEvent.requestPermission()
+                    .then(response => {
+                        if (response === 'granted') {
+                            window.addEventListener('deviceorientation', handleOrientation);
+                            document.getElementById('gyro-btn').style.display = 'none';
+                        }
+                    })
+                    .catch(console.error);
+            } else {
+                window.addEventListener('deviceorientation', handleOrientation);
+                document.getElementById('gyro-btn').style.display = 'none';
+            }
+        }
+
+        function handleOrientation(event) {
+            const tilt = event.gamma; // Range: -90 to 90
+            if (tilt > 5) {
+                player.dx = Math.min(player.speed, tilt / 3);
+            } else if (tilt < -5) {
+                player.dx = Math.max(-player.speed, tilt / 3);
+            } else {
+                player.dx = 0;
+            }
+        }
+
+        // Show gyro button if device likely supports it
+        if (window.DeviceOrientationEvent) {
+            document.getElementById('gyro-btn').style.display = 'block';
+        }
 
         // Start game
         update();
