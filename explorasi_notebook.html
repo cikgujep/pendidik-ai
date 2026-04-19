@@ -103,102 +103,10 @@
 
 <body class="antialiased selection:bg-brand-100 selection:text-brand-900 bg-white">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-nav">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 cursor-pointer group">
-                <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-200 transition-transform group-hover:scale-105">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-display font-bold text-lg text-slate-800 leading-tight">Pendidik<span class="text-brand-600"> AI</span></span>
-                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Edisi 2026</span>
-                </div>
-            </a>
+    <!-- Navigation (Modular) -->
+    <div id="navbar-placeholder" data-theme="light" data-accent="brand"></div>
+    <script src="assets/js/nav-component.js"></script>
 
-            <div class="hidden md:flex items-center gap-1 bg-slate-50/50 p-1 rounded-full border border-slate-100">
-                <a href="explorasi_ai.html" class="px-5 py-2 text-sm font-bold text-brand-600 hover:bg-brand-50 rounded-full transition-all flex items-center gap-2">
-                    <i class="fas fa-arrow-left text-[10px]"></i> Hub
-                </a>
-                <div class="w-px h-4 bg-slate-200 mx-2"></div>
-                
-                <!-- Dropdown Kuasai AI -->
-                <div class="relative group">
-                    <button class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all flex items-center gap-1">
-                        Kuasai AI <i class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
-                    </button>
-                    <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 p-2 transform origin-top scale-95 group-hover:scale-100">
-                        <a href="generatif_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Generatif</a>
-                        <a href="visual_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Visual</a>
-                        <a href="audio_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Audio</a>
-                        <a href="video_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Video</a>
-                    </div>
-                </div>
-
-                <!-- Dropdown Explorasi AI -->
-                <div class="relative group">
-                    <button class="px-5 py-2 text-sm font-bold text-brand-600 bg-white rounded-full shadow-sm transition-all flex items-center gap-1">
-                        Explorasi AI <i class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
-                    </button>
-                    <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 p-2 transform origin-top scale-95 group-hover:scale-100">
-                        <a href="explorasi_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Laman Hub</a>
-                        <a href="explorasi_imej.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Explorasi Imej</a>
-                        <a href="explorasi_notebook.html" class="block px-4 py-2.5 text-sm font-bold text-brand-600 bg-brand-50 rounded-xl transition-colors">NotebookLM</a>
-                        <a href="explorasi_canvas.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Gemini Canvas</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-600 hover:text-brand-600 transition-colors">
-                <i class="fas fa-bars fa-lg"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed inset-0 z-[100] translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onclick="toggleMobileMenu()"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl p-6 flex flex-col overflow-y-auto">
-            <div class="flex justify-between items-center mb-8">
-                <span class="font-display font-bold text-xl text-slate-800">Menu <span class="text-brand-600">Utama</span></span>
-                <button onclick="toggleMobileMenu()" class="p-2 text-slate-400 hover:text-slate-600 transition-colors">
-                    <i class="fas fa-times fa-lg"></i>
-                </button>
-            </div>
-            
-            <div class="space-y-4">
-                <a href="index.html" class="block px-4 py-3 text-slate-600 font-semibold hover:bg-slate-50 rounded-xl transition-all">Utama</a>
-                <a href="explorasi_ai.html" class="block px-4 py-3 text-slate-600 font-semibold hover:bg-slate-50 rounded-xl transition-all">Hub Guru</a>
-                
-                <div class="border-t border-slate-100 my-4 pt-4">
-                    <span class="px-4 text-[10px] font-bold text-brand-600 uppercase tracking-widest">Kuasai AI</span>
-                    <div class="mt-2 space-y-1">
-                        <a href="generatif_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Generatif</a>
-                        <a href="visual_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Visual</a>
-                        <a href="audio_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Audio</a>
-                        <a href="video_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Video</a>
-                    </div>
-                </div>
-
-                <div class="border-t border-slate-100 my-4 pt-4">
-                    <span class="px-4 text-[10px] font-bold text-brand-600 uppercase tracking-widest">Explorasi AI</span>
-                    <div class="mt-2 space-y-1">
-                        <a href="explorasi_imej.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Explorasi Imej</a>
-                        <a href="explorasi_notebook.html" class="block px-4 py-2.5 text-sm font-bold text-brand-600 bg-slate-50 rounded-xl transition-colors">NotebookLM</a>
-                        <a href="explorasi_canvas.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Gemini Canvas</a>
-                        <a href="explorasi_gems.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Gemini Gems</a>
-                        <a href="explorasi_laman.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Laman Pembelajaran</a>
-                        <a href="explorasi_storybook.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Buku Cerita AI</a>
-                    </div>
-                </div>
-
-                <div class="pt-6">
-                    <a href="index.html#guestbook" class="block w-full text-center px-6 py-4 bg-brand-600 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all">Buku Pelawat</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <header id="vanta-bg" class="bg-slate-900 min-h-[70vh] flex items-center pt-20 px-6 relative overflow-hidden">
@@ -1200,15 +1108,6 @@ ${promptContent}
             if(e.target === document.getElementById('modal')) closeModal();
         });
 
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('translate-x-full')) {
-                menu.classList.remove('translate-x-full');
-            } else {
-                menu.classList.add('translate-x-full');
-            }
-        }
     </script>
 </body>
 

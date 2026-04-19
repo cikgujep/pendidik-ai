@@ -75,75 +75,10 @@
 
 <body class="bg-slate-950 text-slate-200 antialiased selection:bg-brand-500/30">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-500/20 transition-transform group-hover:scale-105">
-                    <i class="fas fa-music"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-display font-bold text-lg text-white leading-tight">Juara Lagu<span class="text-brand-500"> AI</span></span>
-                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none">Edisi 2026</span>
-                </div>
-            </a>
-            <div class="hidden md:flex items-center gap-1 bg-slate-900/50 p-1 rounded-full border border-slate-800">
-                <a href="index.html" class="px-5 py-2 text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 rounded-full transition-all">Utama</a>
-                <a href="explorasi_ai.html" class="px-5 py-2 text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 rounded-full transition-all">Hub Utama</a>
-                <a href="#langkah" class="px-5 py-2 text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 rounded-full transition-all">Tutorial</a>
-                <a href="audio_ai.html" class="px-5 py-2 text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-full shadow-md shadow-brand-500/20 transition-all">Audio AI</a>
-            </div>
+    <!-- Navigation (Modular) -->
+    <div id="navbar-placeholder" data-theme="dark" data-accent="brand"></div>
+    <script src="assets/js/nav-component.js"></script>
 
-            <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-400 hover:text-white transition-colors">
-                <i class="fas fa-bars fa-lg"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed inset-0 z-[100] translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onclick="toggleMobileMenu()"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-80 bg-slate-950 shadow-2xl p-6 flex flex-col overflow-y-auto border-l border-slate-800">
-            <div class="flex justify-between items-center mb-8">
-                <span class="font-display font-bold text-xl text-white">Menu <span class="text-brand-500">Utama</span></span>
-                <button onclick="toggleMobileMenu()" class="p-2 text-slate-400 hover:text-white transition-colors">
-                    <i class="fas fa-times fa-lg"></i>
-                </button>
-            </div>
-            
-            <div class="space-y-4">
-                <a href="index.html" class="block px-4 py-3 text-slate-400 font-semibold hover:bg-slate-900/50 rounded-xl transition-all">Utama</a>
-                <a href="explorasi_ai.html" class="block px-4 py-3 text-slate-400 font-semibold hover:bg-slate-900/50 rounded-xl transition-all">Hub Guru</a>
-                
-                <div class="border-t border-slate-800 my-4 pt-4">
-                    <span class="px-4 text-[10px] font-bold text-brand-500 uppercase tracking-widest">Kuasai AI</span>
-                    <div class="mt-2 space-y-1">
-                        <a href="generatif_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">Generatif</a>
-                        <a href="visual_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">Visual</a>
-                        <a href="audio_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">Audio</a>
-                        <a href="video_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">Video</a>
-                    </div>
-                </div>
-
-                <div class="border-t border-slate-800 my-4 pt-4">
-                    <span class="px-4 text-[10px] font-bold text-brand-500 uppercase tracking-widest">Explorasi AI</span>
-                    <div class="mt-2 space-y-1">
-                        <a href="explorasi_imej.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">Explorasi Imej</a>
-                        <a href="explorasi_notebook.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">NotebookLM</a>
-                        <a href="explorasi_canvas.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">Gemini Canvas</a>
-                        <a href="explorasi_gems.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">Gemini Gems</a>
-                        <a href="explorasi_laman.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">Laman Pembelajaran</a>
-                        <a href="explorasi_storybook.html" class="block px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-brand-500 hover:bg-slate-900 rounded-xl transition-colors">Buku Cerita AI</a>
-                    </div>
-                </div>
-
-                <div class="pt-6">
-                    <a href="audio_ai.html" class="block w-full text-center px-6 py-4 bg-brand-600 text-white font-bold rounded-2xl shadow-lg shadow-brand-500/20 transition-all">Audio AI</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <header class="relative min-h-[85vh] flex items-center pt-24 overflow-hidden border-b border-slate-800/50">
@@ -377,15 +312,6 @@ Gaya: Ceria, rancak, untuk murid umur [AGE] tahun.
             alert('Prompt disalin ke papan klip!');
         }
 
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('translate-x-full')) {
-                menu.classList.remove('translate-x-full');
-            } else {
-                menu.classList.add('translate-x-full');
-            }
-        }
     </script>
 </body>
 </html>
