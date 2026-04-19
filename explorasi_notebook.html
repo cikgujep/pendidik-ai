@@ -148,8 +148,57 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-600 hover:text-brand-600 transition-colors">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onclick="toggleMobileMenu()"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl p-6 flex flex-col overflow-y-auto">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-display font-bold text-xl text-slate-800">Menu <span class="text-brand-600">Utama</span></span>
+                <button onclick="toggleMobileMenu()" class="p-2 text-slate-400 hover:text-slate-600 transition-colors">
+                    <i class="fas fa-times fa-lg"></i>
+                </button>
+            </div>
+            
+            <div class="space-y-4">
+                <a href="index.html" class="block px-4 py-3 text-slate-600 font-semibold hover:bg-slate-50 rounded-xl transition-all">Utama</a>
+                <a href="explorasi_ai.html" class="block px-4 py-3 text-slate-600 font-semibold hover:bg-slate-50 rounded-xl transition-all">Hub Guru</a>
+                
+                <div class="border-t border-slate-100 my-4 pt-4">
+                    <span class="px-4 text-[10px] font-bold text-brand-600 uppercase tracking-widest">Kuasai AI</span>
+                    <div class="mt-2 space-y-1">
+                        <a href="generatif_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Generatif</a>
+                        <a href="visual_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Visual</a>
+                        <a href="audio_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Audio</a>
+                        <a href="video_ai.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Video</a>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-100 my-4 pt-4">
+                    <span class="px-4 text-[10px] font-bold text-brand-600 uppercase tracking-widest">Explorasi AI</span>
+                    <div class="mt-2 space-y-1">
+                        <a href="explorasi_imej.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Explorasi Imej</a>
+                        <a href="explorasi_notebook.html" class="block px-4 py-2.5 text-sm font-bold text-brand-600 bg-slate-50 rounded-xl transition-colors">NotebookLM</a>
+                        <a href="explorasi_canvas.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Gemini Canvas</a>
+                        <a href="explorasi_gems.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Gemini Gems</a>
+                        <a href="explorasi_laman.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Laman Pembelajaran</a>
+                        <a href="explorasi_storybook.html" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors">Buku Cerita AI</a>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <a href="index.html#guestbook" class="block w-full text-center px-6 py-4 bg-brand-600 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all">Buku Pelawat</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <header id="vanta-bg" class="bg-slate-900 min-h-[70vh] flex items-center pt-20 px-6 relative overflow-hidden">
@@ -1150,6 +1199,16 @@ ${promptContent}
         document.getElementById('modal').addEventListener('click', (e) => {
             if(e.target === document.getElementById('modal')) closeModal();
         });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('translate-x-full')) {
+                menu.classList.remove('translate-x-full');
+            } else {
+                menu.classList.add('translate-x-full');
+            }
+        }
     </script>
 </body>
 
