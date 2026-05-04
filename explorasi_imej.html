@@ -747,143 +747,168 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="assets/js/main.js"></script>
 
     <script>
-        AOS.init({ duration: 800, once: true });
-        lucide.createIcons();
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('translate-x-full')) {
-                menu.classList.remove('translate-x-full');
-            } else {
-                menu.classList.add('translate-x-full');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 800, once: true, offset: 100 });
             }
-        }
-    </script>
-    
-    <script>
-        AOS.init({ duration: 800, once: true, offset: 100 });
-        lucide.createIcons();
+            
+            // Initialize Lucide Icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
 
-        // Vanta Background
-        VANTA.WAVES({
-          el: "#vanta-bg",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          color: 0x0f172a, // slate-900
-          shininess: 20.00,
-          waveHeight: 12.00,
-          waveSpeed: 0.60,
-          zoom: 0.85
-        });
+            // Initialize Vanta Waves
+            if (typeof VANTA !== 'undefined' && typeof VANTA.WAVES === 'function') {
+                VANTA.WAVES({
+                  el: "#vanta-bg",
+                  mouseControls: true,
+                  touchControls: true,
+                  gyroControls: false,
+                  minHeight: 200.00,
+                  minWidth: 200.00,
+                  scale: 1.00,
+                  scaleMobile: 1.00,
+                  color: 0x0f172a, // slate-900
+                  shininess: 20.00,
+                  waveHeight: 12.00,
+                  waveSpeed: 0.60,
+                  zoom: 0.85
+                });
+            }
 
-        // Accordion functionality
-        document.querySelectorAll('.accordion-toggle').forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const content = toggle.nextElementSibling;
-                const icon = toggle.querySelector('.fa-chevron-down');
-                
-                // Toggle active state
-                content.classList.toggle('active');
-                icon.classList.toggle('rotate-180');
-                
-                // Close others
-                document.querySelectorAll('.accordion-content').forEach(other => {
-                    if (other !== content && other.classList.contains('active')) {
-                        other.classList.remove('active');
-                        other.previousElementSibling.querySelector('.fa-chevron-down').classList.remove('rotate-180');
-                    }
+            // Accordion functionality
+            document.querySelectorAll('.accordion-toggle').forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('.fa-chevron-down');
+                    
+                    // Toggle active state
+                    content.classList.toggle('active');
+                    if (icon) icon.classList.toggle('rotate-180');
+                    
+                    // Close others
+                    document.querySelectorAll('.accordion-content').forEach(other => {
+                        if (other !== content && other.classList.contains('active')) {
+                            other.classList.remove('active');
+                            const otherIcon = other.previousElementSibling.querySelector('.fa-chevron-down');
+                            if (otherIcon) otherIcon.classList.remove('rotate-180');
+                        }
+                    });
                 });
             });
-        });
 
-        // Prompt Generator logic
-        const generateBtn = document.getElementById('generate-btn');
-        const resultTextarea = document.getElementById('hasil-prompt');
-        const resetBtn = document.getElementById('reset-btn');
-        const copyBtn = document.getElementById('copy-btn');
-        
-        const apiKey = "AIzaSyB0wIx9IhbTjqaA8nBDR2g8dAKHYDo-3lQ";
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`;
+            // Prompt Generator logic
+            const generateBtn = document.getElementById('generate-btn');
+            const resultTextarea = document.getElementById('hasil-prompt');
+            const resetBtn = document.getElementById('reset-btn');
+            const copyBtn = document.getElementById('copy-btn');
+            
+            const apiKey = "AIzaSyB0wIx9IhbTjqaA8nBDR2g8dAKHYDo-3lQ";
+            // Using gemini-1.5-flash for better stability, or gemini-2.0-flash if preferred
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
-        generateBtn.addEventListener('click', async () => {
-            const inputs = {
-                subjek: document.getElementById('subjek').value,
-                gaya: document.getElementById('gaya').value,
-                komposisi: document.getElementById('komposisi').value,
-                konteks: document.getElementById('konteks').value,
-                pencahayaan: document.getElementById('pencahayaan').value,
-                warna: document.getElementById('warna').value
-            };
+            if (generateBtn) {
+                generateBtn.addEventListener('click', async () => {
+                    const inputs = {
+                        subjek: document.getElementById('subjek').value,
+                        gaya: document.getElementById('gaya').value,
+                        komposisi: document.getElementById('komposisi').value,
+                        konteks: document.getElementById('konteks').value,
+                        pencahayaan: document.getElementById('pencahayaan').value,
+                        warna: document.getElementById('warna').value
+                    };
 
-            const filledInputs = Object.entries(inputs)
-                .filter(([k, v]) => v.trim() !== "")
-                .map(([k, v]) => `- ${k.charAt(0).toUpperCase() + k.slice(1)}: ${v}`)
-                .join("\n");
+                    const filledInputs = Object.entries(inputs)
+                        .filter(([k, v]) => v.trim() !== "")
+                        .map(([k, v]) => `- ${k.charAt(0).toUpperCase() + k.slice(1)}: ${v}`)
+                        .join("\n");
 
-            if (!filledInputs) {
-                resultTextarea.value = "Sila masukkan butiran subjek.";
-                return;
-            }
+                    if (!filledInputs) {
+                        resultTextarea.value = "Sila masukkan sekurang-kurangnya butiran subjek.";
+                        return;
+                    }
 
-            generateBtn.disabled = true;
-            generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>AI Sedang Membina...';
-            resultTextarea.value = "Menganalisis komponen visual...";
+                    generateBtn.disabled = true;
+                    generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>AI Sedang Membina...';
+                    resultTextarea.value = "Menganalisis komponen visual...";
 
-            try {
-                const promptBody = {
-                    contents: [{
-                        parts: [{
-                            text: `You are a professional AI image prompt engineer. Convert these keywords into ONE cohesive, detailed, and artistic English prompt for Imagen 3/Midjourney. Focus on realism and cinematic quality. Output ONLY the prompt text.\n\nKeywords:\n${filledInputs}`
-                        }]
-                    }]
-                };
+                    try {
+                        const promptBody = {
+                            contents: [{
+                                parts: [{
+                                    text: `You are a professional AI image prompt engineer. Convert these keywords into ONE cohesive, detailed, and artistic English prompt for Imagen 3/Midjourney/DALL-E 3. Focus on realism and cinematic quality. Output ONLY the prompt text without any explanations or quotes.\n\nKeywords:\n${filledInputs}`
+                                }]
+                            }]
+                        };
 
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(promptBody)
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(promptBody)
+                        });
+
+                        if (!response.ok) {
+                            const errorData = await response.json();
+                            throw new Error(errorData.error?.message || `HTTP error! status: ${response.status}`);
+                        }
+
+                        const data = await response.json();
+                        
+                        if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0]) {
+                            const output = data.candidates[0].content.parts[0].text;
+                            resultTextarea.value = output.trim();
+                        } else {
+                            throw new Error("Respon AI tidak lengkap atau disekat oleh penapis keselamatan.");
+                        }
+                    } catch (error) {
+                        console.error("API Error:", error);
+                        resultTextarea.value = `Maaf, ralat berlaku: ${error.message}`;
+                    } finally {
+                        generateBtn.disabled = false;
+                        generateBtn.innerHTML = '<i class="fas fa-robot text-lg"></i> Jana Prompt Pintar dengan AI';
+                    }
                 });
+            }
 
-                const data = await response.json();
-                const output = data.candidates[0].content.parts[0].text;
-                resultTextarea.value = output.trim();
-            } catch (error) {
-                resultTextarea.value = "Maaf, ralat berlaku semasa membina prompt.";
-                console.error(error);
-            } finally {
-                generateBtn.disabled = false;
-                generateBtn.innerHTML = '<i class="fas fa-robot text-lg"></i> Jana Prompt Pintar dengan AI';
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                    const form = document.getElementById('prompt-form');
+                    if (form) form.reset();
+                    resultTextarea.value = "";
+                });
+            }
+
+            if (copyBtn) {
+                copyBtn.addEventListener('click', () => {
+                    if(!resultTextarea.value || resultTextarea.value.startsWith("Maaf") || resultTextarea.value.startsWith("Sila")) return;
+                    
+                    navigator.clipboard.writeText(resultTextarea.value).then(() => {
+                        const icon = copyBtn.querySelector('i');
+                        const oldClass = icon.className;
+                        icon.className = 'fas fa-check text-green-500';
+                        setTimeout(() => icon.className = oldClass, 2000);
+                    });
+                });
             }
         });
 
-        resetBtn.addEventListener('click', () => {
-            document.getElementById('prompt-form').reset();
-            resultTextarea.value = "";
-        });
-
-        copyBtn.addEventListener('click', () => {
-            if(!resultTextarea.value) return;
-            navigator.clipboard.writeText(resultTextarea.value);
-            const icon = copyBtn.querySelector('i');
-            icon.className = 'fas fa-check text-green-500';
-            setTimeout(() => icon.className = 'fas fa-copy text-xl', 2000);
-        });
-
+        // Library copy function (global)
         function copyLibraryPrompt(btn) {
             const prompt = btn.getAttribute('data-prompt');
-            navigator.clipboard.writeText(prompt);
-            const icon = btn.querySelector('i');
-            icon.className = 'fas fa-check text-green-500';
-            setTimeout(() => icon.className = 'fas fa-copy', 2000);
+            if (!prompt) return;
+            
+            navigator.clipboard.writeText(prompt).then(() => {
+                const icon = btn.querySelector('i');
+                const oldClass = icon.className;
+                icon.className = 'fas fa-check text-green-500';
+                setTimeout(() => icon.className = oldClass, 2000);
+            });
         }
     </script>
 
