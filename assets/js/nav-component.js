@@ -1,7 +1,28 @@
 /**
  * Pendidik AI - Modular Navigation Component (2026)
  * Memusatkan pengurusan menu untuk memudahkan kemaskini site-wide.
+ * 
+ * Update 09/05/2026: Ditambah sistem Auto-Clear Cache untuk memastikan
+ * pengguna mendapat versi terbaru secara automatik.
  */
+
+(function() {
+    // KEMASKINI VERSI INI BILA ADA PERUBAHAN BESAR PADA SITE
+    // Ubah nilai ini setiap kali anda kemas kini site untuk force clear cache user
+    const APP_VERSION = '2026.05.09.01'; 
+    const savedVersion = localStorage.getItem('pendidik_ai_version');
+
+    if (savedVersion !== APP_VERSION) {
+        // Bersihkan storan lama
+        localStorage.clear();
+        sessionStorage.clear();
+        
+        // Simpan versi baru
+        localStorage.setItem('pendidik_ai_version', APP_VERSION);
+        
+        console.log(`%c [Pendidik AI] System updated to v${APP_VERSION}. Cache cleared.`, 'background: #16a34a; color: white; padding: 2px 5px; border-radius: 3px;');
+    }
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
     const navPlaceholder = document.getElementById('navbar-placeholder');
