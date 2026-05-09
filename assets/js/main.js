@@ -138,4 +138,29 @@ function openModal(title, content) {
     const modalBody = document.getElementById('modal-body');
 
     if (modalOverlay && modalBox && modalTitle && modalBody) {
-        modalTitl
+        modalTitle.innerText = title;
+        modalBody.innerText = content;
+        
+        modalOverlay.classList.remove('hidden');
+        setTimeout(() => {
+            modalOverlay.classList.remove('opacity-0');
+            modalBox.classList.remove('scale-95');
+        }, 10);
+    }
+}
+
+/**
+ * Helper to close modal
+ */
+function closeModal() {
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalBox = document.getElementById('modal-box');
+
+    if (modalOverlay && modalBox) {
+        modalOverlay.classList.add('opacity-0');
+        modalBox.classList.add('scale-95');
+        setTimeout(() => {
+            modalOverlay.classList.add('hidden');
+        }, 300);
+    }
+}

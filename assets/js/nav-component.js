@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="explorasi_imej.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_imej.html')} rounded-xl transition-colors">Explorasi Imej</a>
                         <a href="explorasi_notebook.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_notebook.html')} rounded-xl transition-colors">NotebookLM</a>
                         <a href="explorasi_canvas.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_canvas.html')} rounded-xl transition-colors">Gemini Canvas</a>
+                        <a href="explorasi_minit.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_minit.html')} rounded-xl transition-colors">Minit AI</a>
                         <a href="explorasi_gems.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_gems.html')} rounded-xl transition-colors">Gemini Gems</a>
                         <a href="explorasi_laman.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_laman.html')} rounded-xl transition-colors">Laman Pembelajaran</a>
                         <a href="explorasi_storybook.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_storybook.html')} rounded-xl transition-colors">Buku Cerita AI</a>
@@ -141,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="explorasi_imej.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_imej.html')} rounded-xl transition-colors">Explorasi Imej</a>
                         <a href="explorasi_notebook.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_notebook.html')} rounded-xl transition-colors">NotebookLM</a>
                         <a href="explorasi_canvas.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_canvas.html')} rounded-xl transition-colors">Gemini Canvas</a>
+                        <a href="explorasi_minit.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_minit.html')} rounded-xl transition-colors">Minit AI</a>
                         <a href="explorasi_gems.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_gems.html')} rounded-xl transition-colors">Gemini Gems</a>
                         <a href="explorasi_laman.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_laman.html')} rounded-xl transition-colors">Laman Pembelajaran</a>
                         <a href="explorasi_storybook.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_storybook.html')} rounded-xl transition-colors">Buku Cerita AI</a>
