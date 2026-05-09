@@ -19,6 +19,9 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -327,7 +330,7 @@
                             </div>
                             <button onclick="copyPrompt()"
                                 class="text-xs text-slate-400 hover:text-brand-600 transition flex items-center gap-1 font-medium">
-                                <i data-lucide="copy" class="w-3 h-3"></i> Salin
+                                <i class="far fa-copy"></i> Salin
                             </button>
                         </div>
 
@@ -402,10 +405,15 @@
     <script>
         // Copy Functionality
         function copyPrompt() {
+            const btn = event.currentTarget;
             const text = document.getElementById('prompt-text').innerText;
             navigator.clipboard.writeText(text).then(() => {
-                // Using simple alert for now, can be upgraded to custom toast
-                alert('Prompt disalin!');
+                const icon = btn.querySelector('i');
+                const oldClass = icon.className;
+                icon.className = 'fas fa-check text-brand-600';
+                setTimeout(() => {
+                    icon.className = oldClass;
+                }, 2000);
             });
         }
 

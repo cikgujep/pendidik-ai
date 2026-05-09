@@ -876,14 +876,6 @@
                 });
             }
 
-            if (resetBtn) {
-                resetBtn.addEventListener('click', () => {
-                    const form = document.getElementById('prompt-form');
-                    if (form) form.reset();
-                    resultTextarea.value = "";
-                });
-            }
-
             if (copyBtn) {
                 copyBtn.addEventListener('click', () => {
                     if(!resultTextarea.value || resultTextarea.value.startsWith("Maaf") || resultTextarea.value.startsWith("Sila")) return;
