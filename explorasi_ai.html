@@ -36,6 +36,16 @@
                             500: '#6366f1',
                             600: '#4f46e5',
                             700: '#4338ca',
+                        },
+                        accent: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
                         }
                     }
                 }
@@ -154,8 +164,26 @@
                     Terokai Sekarang <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
                 </div>
             </a>
+
+            <!-- Module: Minit Mesyuarat -->
+            <a href="explorasi_minit.html" class="module-card bg-white rounded-[2.5rem] p-8 border border-slate-100 flex flex-col items-start group hover:border-accent-200" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-accent-50 rounded-2xl flex items-center justify-center text-accent-600 mb-8 transition-transform group-hover:scale-110">
+                    <i data-lucide="microphone" class="w-8 h-8"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-[10px] font-bold text-accent-600 uppercase tracking-widest bg-accent-50 px-2 py-0.5 rounded mb-3 inline-block">Produktiviti</span>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4 transition-colors group-hover:text-accent-600">Minit Mesyuarat AI</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                        Automasi penyediaan minit mesyuarat. Dari rakaman suara ke transkrip penuh dan minit rasmi yang tersusun rapi menggunakan formula R.A.S.A.
+                    </p>
+                </div>
+                <div class="flex items-center text-accent-600 font-bold text-sm gap-2 mt-auto">
+                    Terokai Sekarang <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+            </a>
+
             <!-- Module: Gemini Gems -->
-            <a href="explorasi_gems.html" class="module-card bg-white rounded-[2.5rem] p-8 border border-slate-100 flex flex-col items-start group hover:border-cyan-200" data-aos="fade-up" data-aos-delay="100">
+            <a href="explorasi_gems.html" class="module-card bg-white rounded-[2.5rem] p-8 border border-slate-100 flex flex-col items-start group hover:border-cyan-200" data-aos="fade-up" data-aos-delay="200">
                 <div class="w-16 h-16 bg-cyan-50 rounded-2xl flex items-center justify-center text-cyan-600 mb-8 transition-transform group-hover:scale-110">
                     <i data-lucide="bot-message-square" class="w-8 h-8"></i>
                 </div>
@@ -172,7 +200,7 @@
             </a>
 
             <!-- Module: Laman Pembelajaran -->
-            <a href="explorasi_laman.html" class="module-card bg-white rounded-[2.5rem] p-8 border border-slate-100 flex flex-col items-start group hover:border-teal-200" data-aos="fade-up" data-aos-delay="200">
+            <a href="explorasi_laman.html" class="module-card bg-white rounded-[2.5rem] p-8 border border-slate-100 flex flex-col items-start group hover:border-teal-200" data-aos="fade-up" data-aos-delay="100">
                 <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600 mb-8 transition-transform group-hover:scale-110">
                     <i data-lucide="layers" class="w-8 h-8"></i>
                 </div>
@@ -189,7 +217,7 @@
             </a>
 
             <!-- Module: Peta Minda -->
-            <a href="explorasi_mindmap.html" class="module-card bg-white rounded-[2.5rem] p-8 border border-slate-100 flex flex-col items-start group hover:border-violet-200" data-aos="fade-up" data-aos-delay="100">
+            <a href="explorasi_mindmap.html" class="module-card bg-white rounded-[2.5rem] p-8 border border-slate-100 flex flex-col items-start group hover:border-violet-200" data-aos="fade-up" data-aos-delay="200">
                 <div class="w-16 h-16 bg-violet-50 rounded-2xl flex items-center justify-center text-violet-600 mb-8 transition-transform group-hover:scale-110">
                     <i data-lucide="brain-circuit" class="w-8 h-8"></i>
                 </div>
@@ -219,8 +247,9 @@
     <!-- Vendor Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
         lucide.createIcons();
-
     </script>
 </body>
 
