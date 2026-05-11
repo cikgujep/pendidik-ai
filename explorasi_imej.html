@@ -406,7 +406,13 @@
                     <p class="text-slate-500 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">Koleksi lengkap prompt premium yang dikumpulkan mengikut kategori untuk hasil yang profesional.</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Inspiration Chips for Quick Selection -->
+                <div class="flex flex-wrap justify-center gap-3 mb-16" data-aos="fade-up">
+                    <button onclick="applyPreset('Futuristic City', 'Cyberpunk', 'Aerial view', 'Neon lights', 'Vibrant', 'Neon blue & pink')" class="px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-semibold hover:bg-brand-50 hover:border-brand-200 hover:text-brand-600 transition-all">🏙️ Bandar Masa Depan</button>
+                    <button onclick="applyPreset('Kucing Angkasawan', '3D Render', 'Close up', 'Studio lighting', 'Cinematic', 'Pastel Tones')" class="px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-semibold hover:bg-brand-50 hover:border-brand-200 hover:text-brand-600 transition-all">🐱 Kucing Angkasa</button>
+                    <button onclick="applyPreset('Hutan Fantasi', 'Oil Painting', 'Wide shot', 'Golden Hour', 'Dreamy', 'Earthy tones')" class="px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-semibold hover:bg-brand-50 hover:border-brand-200 hover:text-brand-600 transition-all">🌳 Hutan Fantasi</button>
+                    <button onclick="applyPreset('Kereta Sport', 'Photorealistic', 'Low angle', 'Sunset', 'High contrast', 'Metallic Red')" class="px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-semibold hover:bg-brand-50 hover:border-brand-200 hover:text-brand-600 transition-all">🏎️ Kereta Sport</button>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     
                     <!-- Kumpulan 1: Potret & Profesional -->
                     <div class="space-y-6" data-aos="fade-up">
@@ -416,68 +422,67 @@
                         </div>
 
                         <!-- Card 1: Maroon Studio -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-teal-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">1. Maroon Studio (Male)</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="A hyper-realistic cinematic editorial portrait of the uploaded person (preserve face 100%). HE stands tall in a dark MAROON moody studio, surrounded by soft drifting black white smoke under a dramatic spotlight. Outfit:Fit blaack luxury suit with fit-leg trousers, . Both hands tucked casually in pockets, shoulders relaxed, confident expression, head tilted slightly upward." class="text-teal-500 hover:text-teal-700 transition">
-                                    <i class="fas fa-copy"></i>
-                                </button>
+                        <div class="bg-white rounded-[2.5rem] border border-slate-100 hover:border-teal-200 transition-all flex flex-col overflow-hidden shadow-sm hover:shadow-xl group">
+                            <div class="aspect-[4/5] overflow-hidden bg-slate-100">
+                                <img src="assets/img/pro_maroon_studio.png" alt="Maroon Studio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             </div>
-                            <p class="text-xs text-slate-500 italic leading-relaxed">"A hyper-realistic cinematic editorial portrait..."</p>
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-slate-800">1. Maroon Studio</h4>
+                                    <button onclick="copyLibraryPrompt(this)" data-prompt="A hyper-realistic cinematic editorial portrait of the uploaded person (preserve face 100%). HE stands tall in a dark MAROON moody studio, surrounded by soft drifting black white smoke under a dramatic spotlight. Outfit:Fit blaack luxury suit with fit-leg trousers, . Both hands tucked casually in pockets, shoulders relaxed, confident expression, head tilted slightly upward." class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 hover:bg-teal-600 hover:text-white transition-all flex items-center justify-center">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-slate-500 italic leading-relaxed line-clamp-2">"A hyper-realistic cinematic editorial portrait in a dark maroon studio..."</p>
+                            </div>
                         </div>
 
-                        <!-- Card 2: High Likeness -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-teal-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">2. High Likeness Corporate</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="High-fidelity, true-to-source facial replication and maintain 100% facial likeness and true identity. Preserve the original person's attached image, face, and physical features. Do not alter their appearance. Apply the following style: A hyper-realistic photograph of a subject with a well-proportioned, lean-to-medium build, captured as a medium close-up, from the chest up, with an eye-level camera angle and natural perspective, in 8K resolution with cinematic realism..." class="text-teal-500 hover:text-teal-700"><i class="fas fa-copy"></i></button>
+                        <!-- Card 2: Hijab Authority -->
+                        <div class="bg-white rounded-[2.5rem] border border-slate-100 hover:border-teal-200 transition-all flex flex-col overflow-hidden shadow-sm hover:shadow-xl group">
+                            <div class="aspect-[4/5] overflow-hidden bg-slate-100">
+                                <img src="assets/img/pro_hijab_authority.png" alt="Hijab Authority" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             </div>
-                            <p class="text-xs text-slate-400">Fokus kepada ketepatan wajah 100% untuk profil korporat.</p>
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-slate-800">2. Relaxed Authority</h4>
+                                    <button onclick="copyLibraryPrompt(this)" data-prompt="Hands in Pockets - relaxed authority. A hyper-realistic cinematic editorial portrait of the uploaded person (preserve face 100%). Red hijab covering her whole chest. She stands tall in a dark room, with 4 lighting setup facing the camera. Outfit: black luxury suit, Left hands tucked casually in pockets, shoulders relaxed, confident expression, head tilted slightly fwd." class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 hover:bg-teal-600 hover:text-white transition-all flex items-center justify-center">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-slate-500 italic leading-relaxed line-clamp-2">"Professional portrait of a woman in a red hijab with authoritative posture..."</p>
+                            </div>
                         </div>
 
-                        <!-- Card 3: White Luxury Suit -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-teal-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">3. White Luxury Suit</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="A hyper-realistic cinematic editorial portrait of the uploaded person (preserve face 100%). HE stands tall in a dark MAROON moody studio, surrounded by soft drifting black white smoke under a dramatic spotlight. Outfit:Fit white luxury suit with fit-leg trousers, paired with a slightly unbuttoned white silk shirt. Both hands tucked casually in pockets, shoulders relaxed, confident expression, head tilted slightly upward." class="text-teal-500 hover:text-teal-700"><i class="fas fa-copy"></i></button>
+                        <!-- Card 3: Stark Cinematic -->
+                        <div class="bg-white rounded-[2.5rem] border border-slate-100 hover:border-teal-200 transition-all flex flex-col overflow-hidden shadow-sm hover:shadow-xl group">
+                            <div class="aspect-[9/16] overflow-hidden bg-slate-100">
+                                <img src="assets/img/pro_stark_cinematic.png" alt="Stark Cinematic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             </div>
-                            <p class="text-xs text-slate-400">Gaya mewah dengan sut putih dan pencahayaan studio moody.</p>
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-slate-800">3. Stark Cinematic</h4>
+                                    <button onclick="copyLibraryPrompt(this)" data-prompt="Create a vertical potrait shot in 1080x1920 format, characterized by stark cinematic lighting and intense contrast. Captured in a slightly low, upward-facing angle that dramatized the subject’s jawline and neck, the composition evokes quite dominance and sculptural elegance. The background is a deep, saturated crimson red, creating a bold visual clash with the model’s luminous skin and dark wardrobe." class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 hover:bg-teal-600 hover:text-white transition-all flex items-center justify-center">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-slate-500 italic leading-relaxed line-clamp-2">"High-contrast vertical portrait with a deep crimson background..."</p>
+                            </div>
                         </div>
 
-                        <!-- Card 4: Hijab Authority -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-teal-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">4. Relaxed Authority (Hijab)</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Hands in Pockets - relaxed authority. A hyper-realistic cinematic editorial portrait of the uploaded person (preserve face 100%). slate- Red hijab covering her whole chest. She stands tall in a dark room, with 4 lighting setup facing the camera. Outfit: slate-black luxury suit, Left hands tucked casually in pockets, shoulders relaxed, confident expression, head tilted slightly fwd." class="text-teal-500 hover:text-teal-700"><i class="fas fa-copy"></i></button>
+                        <!-- Card 4: Corporate Maven -->
+                        <div class="bg-white rounded-[2.5rem] border border-slate-100 hover:border-teal-200 transition-all flex flex-col overflow-hidden shadow-sm hover:shadow-xl group">
+                            <div class="aspect-square overflow-hidden bg-slate-100">
+                                <img src="assets/img/pro_corporate_maven.png" alt="Corporate Maven" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             </div>
-                            <p class="text-xs text-slate-400">Sesuai untuk potret profesional wanita berhijab.</p>
-                        </div>
-
-                        <!-- Card 5: Stark Cinematic Vertical -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-teal-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">5. Stark Cinematic (Vertical)</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Create a vertical potrait shot in 1080x1920 format using the exact same face features, characterized by stark cinematic lighting and intense contrast. Captured in a slightly low, upward-facing angle that dramatized the subject’s jawline and neck, the composition evokes quite dominance and sculptural elegance. The background is a deep, saturated crimson red, creating a bold visual clash with the model’s luminous skin and dark wardrobe." class="text-teal-500 hover:text-teal-700"><i class="fas fa-copy"></i></button>
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-slate-800">4. Corporate Maven</h4>
+                                    <button onclick="copyLibraryPrompt(this)" data-prompt="Studio portrait, arms crossed, slight 45° angle, looking at camera. Navy blazer, white shirt, blue-white striped tie. Soft key light, fill, rim; deep blue gradient background. Waist-up, 85mm, f/2.8, shallow depth. Photorealistic 4K, cinematic corporate style. Keep exact facial features, skin texture, and lip color." class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 hover:bg-teal-600 hover:text-white transition-all flex items-center justify-center">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-slate-500 italic leading-relaxed line-clamp-2">"Professional corporate profile with soft studio lighting and navy blazer..."</p>
                             </div>
-                            <p class="text-xs text-slate-400">Format menegak (9:16) dengan kontras tinggi dan latar merah.</p>
-                        </div>
-
-                        <!-- Card 6: Sharp Profile Glow -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-teal-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">6. Sharp Profile Glow</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Model is wearing a dark, form-fitting turtleneck or sweater, which completely disappears into the pure black background, emphasizing the glowing contour. The Model is looking slightly upwards and to the side, conveying contemplation or a sense of aspiration. Subject: model short hair, clean profile. The face is mostly in shadow, but the sharp line of light defines the jawline and brow. Lighting: Single, very hard, concentrated light source positioned directly behind and slightly to the side of the model, creating a bright, glowing halo effect" class="text-teal-500 hover:text-teal-700"><i class="fas fa-copy"></i></button>
-                            </div>
-                            <p class="text-xs text-slate-400">Pencahayaan contour yang dramatik di atas latar hitam pekat.</p>
-                        </div>
-
-                        <!-- Card 7: Corporate Maven -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-teal-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">7. Corporate Maven</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Use my image as face reference. Studio portrait, arms crossed, slight 45° angle, looking at camera. Navy blazer, white shirt, blue-white striped tie. Soft key light, fill, rim; deep blue gradient background. Waist-up, 85mm, f/2.8, shallow depth. Photorealistic 4K, cinematic corporate style. Keep exact facial features, skin texture, and lip color." class="text-teal-500 hover:text-teal-700"><i class="fas fa-copy"></i></button>
-                            </div>
-                            <p class="text-xs text-slate-400">Gaya korporat klasik dengan blazer navy dan latar gradien biru.</p>
                         </div>
                     </div>
 
@@ -488,53 +493,52 @@
                             <h3 class="text-2xl font-bold text-slate-800">Produk & Makanan</h3>
                         </div>
 
-                        <!-- Card 8: Professional Advertising -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-orange-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">8. Professional Advertising</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Transform this product photo into a professional advertising image. Keep the original product shape, logo, and text exactly as in the reference. Make it look high-quality, sharp, and realistic. Focus on: Hero shot of the product in the center, well-lit with cinematic lighting. Add realistic environment and props related to the product theme. Enhance textures: condensation drops, fresh ingredients, splashes, or glowing highlights. Depth of field with natural background blur. Vibrant, commercial-grade color grading. Maintain readability of the product’s label and brand. Style: modern product advertising photography, professional, high impact" class="text-orange-500 hover:text-orange-700"><i class="fas fa-copy"></i></button>
+                        <!-- Card 5: Floating Food -->
+                        <div class="bg-white rounded-[2.5rem] border border-slate-100 hover:border-orange-200 transition-all flex flex-col overflow-hidden shadow-sm hover:shadow-xl group">
+                            <div class="aspect-video overflow-hidden bg-slate-100">
+                                <img src="assets/img/pro_floating_burger.png" alt="Floating Burger" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             </div>
-                            <p class="text-xs text-slate-400">Ubah foto produk biasa menjadi iklan profesional.</p>
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-slate-800">5. Floating Food</h4>
+                                    <button onclick="copyLibraryPrompt(this)" data-prompt="Delicious burger, floating in the air, cinematic, food professional photography, studio lighting, studio dark background, advertising photography, intricate details, hyper-detailed, ultra-realistic" class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 hover:bg-orange-600 hover:text-white transition-all flex items-center justify-center">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-slate-500 italic leading-relaxed line-clamp-2">"Dramatic 'gravity-defying' visual for gourmet food advertising..."</p>
+                            </div>
                         </div>
 
-                        <!-- Card 9: Floating Food -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-orange-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">9. Floating Food Studio</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Delicious [FOOD], floating in the air, cinematic, food professional photography, studio lighting, studio dark background, advertising photography, intricate details, hyper-detailed, ultra-realistic" class="text-orange-500 hover:text-orange-700"><i class="fas fa-copy"></i></button>
+                        <!-- Card 6: Seblak Explosion -->
+                        <div class="bg-white rounded-[2.5rem] border border-slate-100 hover:border-orange-200 transition-all flex flex-col overflow-hidden shadow-sm hover:shadow-xl group">
+                            <div class="aspect-[9/16] overflow-hidden bg-slate-100">
+                                <img src="assets/img/pro_seblak_explosion.png" alt="Seblak Explosion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             </div>
-                            <p class="text-xs text-slate-400">Gaya 'gravity-defying' untuk visual makanan yang dramatik.</p>
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-slate-800">6. Seblak Explosion</h4>
+                                    <button onclick="copyLibraryPrompt(this)" data-prompt="Professional food advertising of a spicy Red Seblak in a white ceramic bowl. The bowl is captured mid-air with a smooth swirling motion. Spicy red broth splashes elegantly in curved arcs. Textures of crackers and toppings are hyper-detailed. Dramatic studio lighting, dark cinematic background. 8k resolution, vertical 9:16." class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 hover:bg-orange-600 hover:text-white transition-all flex items-center justify-center">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-slate-500 italic leading-relaxed line-clamp-2">"High-impact action shot of spicy Seblak with elegant liquid splashes..."</p>
+                            </div>
                         </div>
 
-                        <!-- Card 10: Seblak Explosion -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-orange-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">10. Seblak Kuah Explosion</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Use uploaded photo as absolute main reference. Preserve Seblak kuah identity, ingredients, textures, and proportions; do not add anything not present. Intact ceramic bowl rises in a smooth swirling twirl motion; slight controlled tilt, stable anchor. Destroy ONLY the FOOD: crackers/kerupuk tear and split revealing bubbly porous texture; toppings (as in reference) separate naturally; spicy broth stretches in viscous ribbons and curved splash arcs; chili droplets and seeds (if present) scatter directionally, elegant, not chaotic. Bowl SAFE & LOCKED: ceramic bowl perfectly intact, no warping, no cracks. Dramatic studio lighting, glossy highlights on broth/oil, rim light outlining fragments, dark cinematic background, high-speed crisp freeze, 50–85mm, shallow DOF, 9:16." class="text-orange-500 hover:text-orange-700 transition">
-                                    <i class="fas fa-copy"></i>
-                                </button>
+                        <!-- Card 7: Pepsi Gaming -->
+                        <div class="bg-white rounded-[2.5rem] border border-slate-100 hover:border-orange-200 transition-all flex flex-col overflow-hidden shadow-sm hover:shadow-xl group">
+                            <div class="aspect-[9/16] overflow-hidden bg-slate-100">
+                                <img src="assets/img/pro_pepsi_gaming.png" alt="Pepsi Gaming" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             </div>
-                            <p class="text-xs text-slate-500 italic leading-relaxed">"Professional food advertising photography of a spicy Red Seblak..."</p>
-                        </div>
-
-                        <!-- Card 11: Molten Cheese -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-orange-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">11. Molten Cheese Action</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Close-up shot of a {FOOD ITEM}], with molten cheese dripping or stretching from it in a dramatic, mouthwatering way. Captured mid-action (e.g., being pulled apart, held mid-air, or overflowing), with cinematic studio lighting, shallow depth of field, macro lens detail, soft shadows, realistic steam, high contrast, photo-realistic 8K quality" class="text-orange-500 hover:text-orange-700"><i class="fas fa-copy"></i></button>
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-slate-800">7. Pepsi Gaming Poster</h4>
+                                    <button onclick="copyLibraryPrompt(this)" data-prompt="Create a premium vertical advertising poster for Pepsi with a cinematic visual atmosphere inspired by iconic modern video game cover art. The poster should combine the energetic identity of Pepsi with the dramatic composition commonly found in AAA game covers. Incorporate bold typography, futuristic overlays, neon accents, and atmospheric background elements. 8K resolution." class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 hover:bg-orange-600 hover:text-white transition-all flex items-center justify-center">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-slate-500 italic leading-relaxed line-clamp-2">"Futuristic and energetic gaming-inspired poster for Pepsi..."</p>
                             </div>
-                            <p class="text-xs text-slate-400">Visual 'cheese pull' yang menyelerakan dengan tekstur makro.</p>
-                        </div>
-
-                        <!-- Card 14: Pepsi Gaming Poster -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-orange-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">14. Pepsi Gaming Poster</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Create a premium vertical advertising poster for Pepsi with a cinematic visual atmosphere inspired by iconic modern video game cover art. The poster should combine the energetic, refreshing, and youthful identity of Pepsi with the dramatic composition, immersive storytelling, and high-impact visual presentation commonly found in AAA game covers and blockbuster promotional artwork. The final design should feel bold, stylish, futuristic, dynamic, and visually powerful while still maintaining the polished quality of a world-class beverage advertising campaign. Incorporate bold typography, layered graphic elements, decorative ornaments, futuristic overlays, cinematic textures, motion graphics, and stylish visual effects inspired by modern game cover aesthetics. Add dramatic lighting, glowing reflections, energy streaks, floating particles, abstract gaming-inspired details, smoke effects, dynamic shapes, neon accents, glossy highlights, and atmospheric background elements that create depth, movement, and intensity without making the composition overly crowded. The subject’s pose must NOT look identical to the reference photo. Reimagine the pose creatively with more movement, personality, and cinematic elegance. The outfit should feature modern casual street-fashion styling with contemporary layering, trendy silhouettes, stylish accessories. Integrate the Pepsi product prominently into the composition using highly detailed product presentation. Use cinematic lighting, ultra-realistic reflections, premium color grading, sharp focus, dramatic contrast, immersive depth, and highly detailed rendering throughout the poster. 8K resolution." class="text-orange-500 hover:text-orange-700 transition">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <p class="text-xs text-slate-500 italic leading-relaxed">&quot;Create a premium vertical advertising poster for Pepsi... inspired by iconic modern video game cover art.&quot;</p>
                         </div>
                     </div>
 
@@ -545,28 +549,36 @@
                             <h3 class="text-2xl font-bold text-slate-800">Kreatif & Artistik</h3>
                         </div>
 
-                        <!-- Card 12: Superhero Comic -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-purple-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">12. Superhero Comic Cover</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Create a semi-realistic caricature portrait of one person (replace face with uploaded photo). The person stands confidently with a calm, serious-but-cool expression. The background features stylized comic panels arranged like a superhero cover — each showing the same person in mini poses. Subtle speech bubbles or action text like 'WOW' and 'SLASH' appear in the background." class="text-purple-500 hover:text-purple-600 transition">
-                                    <i class="fas fa-copy"></i>
-                                </button>
+                        <!-- Card 8: Superhero Comic -->
+                        <div class="bg-white rounded-[2.5rem] border border-slate-100 hover:border-purple-200 transition-all flex flex-col overflow-hidden shadow-sm hover:shadow-xl group">
+                            <div class="aspect-square overflow-hidden bg-slate-100">
+                                <img src="assets/img/pro_superhero_comic.png" alt="Superhero Comic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             </div>
-                            <p class="text-xs text-slate-500 italic leading-relaxed">"A semi-realistic caricature portrait of a cool Asian man..."</p>
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-slate-800">8. Superhero Comic</h4>
+                                    <button onclick="copyLibraryPrompt(this)" data-prompt="Create a semi-realistic caricature portrait of a person standing confidently. The background features stylized comic panels arranged like a superhero cover. Subtle speech bubbles or action text like 'WOW' and 'SLASH' appear in the background." class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 hover:bg-purple-600 hover:text-white transition-all flex items-center justify-center">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-slate-500 italic leading-relaxed line-clamp-2">"Stylized caricature portrait with classic superhero comic book panels..."</p>
+                            </div>
                         </div>
                         
-                        <!-- Card 13: Telur Kukus -->
-                        <div class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-purple-200 transition-all flex flex-col gap-4 shadow-sm hover:shadow-md">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-slate-800">13. Chinese Steamed Egg</h4>
-                                <button onclick="copyLibraryPrompt(this)" data-prompt="Transform this product photo into a professional advertising image. Keep the original product shape, logo, and text exactly as in the reference. Make it look high-quality, sharp, and realistic. Focus on: Hero shot of the product in the center, well-lit with cinematic lighting. Add realistic environment and props related to the product theme. Enhance textures: condensation drops, fresh ingredients, splashes, or glowing highlights. Depth of field with natural background blur. Vibrant, commercial-grade color grading. Maintain readability of the product’s label and brand. Style: modern product advertising photography, professional, high impact Telur kukus sos daging Chinese style" class="text-purple-500 hover:text-purple-600 transition">
-                                    <i class="fas fa-copy"></i>
-                                </button>
+                        <!-- Card 9: Steamed Egg -->
+                        <div class="bg-white rounded-[2.5rem] border border-slate-100 hover:border-purple-200 transition-all flex flex-col overflow-hidden shadow-sm hover:shadow-xl group">
+                            <div class="aspect-video overflow-hidden bg-slate-100">
+                                <img src="assets/img/pro_steamed_egg.png" alt="Steamed Egg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             </div>
-                            <p class="text-xs text-slate-500 italic leading-relaxed">&quot;Transform this product photo... Telur kukus sos daging Chinese style&quot;</p>
-                        </div>
-
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-slate-800">9. Chinese Steamed Egg</h4>
+                                    <button onclick="copyLibraryPrompt(this)" data-prompt="Professional advertising photography of Chinese Steamed Egg with savory meat sauce and chopped spring onions. Smooth silky texture of the egg, glistening sauce. Hero shot in a ceramic bowl, cinematic lighting, shallow depth of field. 8k resolution." class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 hover:bg-purple-600 hover:text-white transition-all flex items-center justify-center">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-slate-500 italic leading-relaxed line-clamp-2">"Appetizing close-up of silky steamed egg with savory sauce..."</p>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -921,10 +933,38 @@
             
             navigator.clipboard.writeText(prompt).then(() => {
                 const icon = btn.querySelector('i');
-                const oldClass = icon.className;
-                icon.className = 'fas fa-check text-green-500';
-                setTimeout(() => icon.className = oldClass, 2000);
+                const oldIconClass = icon.className;
+                
+                // Save original styles
+                const originalBg = btn.className.match(/bg-\w+-\d+/)?.[0];
+                const originalText = btn.className.match(/text-\w+-\d+/)?.[0];
+                
+                icon.className = 'fas fa-check';
+                btn.classList.add('!bg-green-500', '!text-white');
+                
+                setTimeout(() => {
+                    icon.className = oldIconClass;
+                    btn.classList.remove('!bg-green-500', '!text-white');
+                }, 2000);
             });
+        }
+
+        // Apply Preset to Generator
+        function applyPreset(subjek, gaya, komposisi, konteks, pencahayaan, warna) {
+            document.getElementById('subjek').value = subjek;
+            document.getElementById('gaya').value = gaya;
+            document.getElementById('komposisi').value = komposisi;
+            document.getElementById('konteks').value = konteks;
+            document.getElementById('pencahayaan').value = pencahayaan;
+            document.getElementById('warna').value = warna;
+            
+            // Scroll to generator and highlight
+            const form = document.getElementById('prompt-form');
+            form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Brief highlight effect
+            form.classList.add('ring-4', 'ring-brand-500/20');
+            setTimeout(() => form.classList.remove('ring-4', 'ring-brand-500/20'), 1000);
         }
     </script>
 
