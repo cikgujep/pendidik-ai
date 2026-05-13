@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="explorasi_laman.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_laman.html')} rounded-xl transition-colors">Laman Pembelajaran</a>
                         <a href="explorasi_storybook.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_storybook.html')} rounded-xl transition-colors">Buku Cerita AI</a>
                         <a href="explorasi_mindmap.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_mindmap.html')} rounded-xl transition-colors">Peta Minda</a>
+                        <a href="explorasi_kajian_tindakan.html" class="block px-4 py-2.5 text-sm ${activeClass('explorasi_kajian_tindakan.html')} rounded-xl transition-colors">Kajian Tindakan</a>
                         <a href="juara_lagu.html" class="block px-4 py-2.5 text-sm ${activeClass('juara_lagu.html')} rounded-xl transition-colors">Juara Lagu (Suno)</a>
                     </div>
                 </div>
