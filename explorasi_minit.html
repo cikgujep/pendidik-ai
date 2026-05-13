@@ -314,17 +314,18 @@
 
         function copyToClipboard(elementId, btnId) {
             const text = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(text);
             
-            const btn = document.getElementById(btnId);
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check"></i> Berjaya Disalin!';
-            btn.classList.add('bg-emerald-600');
-            
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.remove('bg-emerald-600');
-            }, 2000);
+            window.copyTextToClipboard(text).then(() => {
+                const btn = document.getElementById(btnId);
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Berjaya Disalin!';
+                btn.classList.add('bg-emerald-600');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-emerald-600');
+                }, 2000);
+            });
         }
 
     </script>

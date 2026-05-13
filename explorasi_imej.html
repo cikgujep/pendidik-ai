@@ -917,7 +917,7 @@
                 copyBtn.addEventListener('click', () => {
                     if(!resultTextarea.value || resultTextarea.value.startsWith("Maaf") || resultTextarea.value.startsWith("Sila")) return;
                     
-                    navigator.clipboard.writeText(resultTextarea.value).then(() => {
+                    window.copyTextToClipboard(resultTextarea.value).then(() => {
                         const icon = copyBtn.querySelector('i');
                         const oldClass = icon.className;
                         icon.className = 'fas fa-check text-green-500';
@@ -932,7 +932,7 @@
             const prompt = btn.getAttribute('data-prompt');
             if (!prompt) return;
             
-            navigator.clipboard.writeText(prompt).then(() => {
+            window.copyTextToClipboard(prompt).then(() => {
                 const icon = btn.querySelector('i');
                 const oldIconClass = icon.className;
                 

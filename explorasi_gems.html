@@ -270,7 +270,7 @@ Berikan 3 cadangan penambahbaikan pada setiap akhir semakan."</pre>
 
         function copyText(id, btn) {
             const content = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(content).then(() => {
+            window.copyTextToClipboard(content).then(() => {
                 const originalContent = btn.innerHTML;
                 btn.innerHTML = '<i class="fas fa-check"></i> Disalin!';
                 btn.style.backgroundColor = '#0891b2';

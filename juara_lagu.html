@@ -309,7 +309,7 @@ Gaya: Ceria, rancak, untuk murid umur [AGE] tahun.
         function copyPrompt(id) {
             const btn = event.currentTarget;
             const text = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(text).then(() => {
+            window.copyTextToClipboard(text).then(() => {
                 const icon = btn.querySelector('i');
                 const oldClass = icon.className;
                 icon.className = 'fas fa-check text-emerald-400';

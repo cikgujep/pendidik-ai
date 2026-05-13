@@ -279,7 +279,7 @@ Style: Cinematic, photorealistic, wide-angle, 4K. --ar 16:9</pre>
 
         function copyPrompt(id, btn) {
             const content = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(content).then(() => {
+            window.copyTextToClipboard(content).then(() => {
                 const originalText = btn.innerHTML;
                 btn.innerHTML = '<i class="fas fa-check"></i> Berjaya!';
                 btn.classList.add('copied');

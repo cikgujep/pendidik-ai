@@ -392,17 +392,17 @@
 
         function copyModalPrompt() {
             const content = document.getElementById('modalContent').value;
-            navigator.clipboard.writeText(content);
-            
-            const btn = document.getElementById('copyBtn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check"></i> Telah Disalin!';
-            btn.classList.replace('bg-accent-600', 'bg-emerald-600');
-            
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.replace('bg-emerald-600', 'bg-accent-600');
-            }, 2000);
+            window.copyTextToClipboard(content).then(() => {
+                const btn = document.getElementById('copyBtn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Telah Disalin!';
+                btn.classList.replace('bg-accent-600', 'bg-emerald-600');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-emerald-600', 'bg-accent-600');
+                }, 2000);
+            });
         }
 
         document.getElementById('modal').addEventListener('click', (e) => {

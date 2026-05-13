@@ -206,3 +206,45 @@ window.toggleMobileMenu = function() {
         menu.classList.add('translate-x-full');
     }
 }
+/**
+ * Robust Copy to Clipboard with Fallback
+ * Digunakan untuk mengatasi sekatan dalam iframe Google Sites.
+ */
+window.copyTextToClipboard = function(text) {
+    return new Promise((resolve, reject) => {
+        // Try modern API first
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(resolve).catch(() => {
+                // Fallback if rejected (common in cross-origin iframes)
+                fallbackCopyTextToClipboard(text, resolve, reject);
+            });
+        } else {
+            // Fallback for non-secure contexts or restricted iframes
+            fallbackCopyTextToClipboard(text, resolve, reject);
+        }
+    });
+};
+
+function fallbackCopyTextToClipboard(text, resolve, reject) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.left = "-9999px";
+    textArea.style.top = "0";
+    textArea.style.opacity = "0";
+    textArea.style.pointerEvents = "none";
+    
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        if (successful) resolve();
+        else reject(new Error('Copy command failed'));
+    } catch (err) {
+        document.body.removeChild(textArea);
+        reject(err);
+    }
+}

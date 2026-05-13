@@ -407,7 +407,7 @@
         function copyPrompt() {
             const btn = event.currentTarget;
             const text = document.getElementById('prompt-text').innerText;
-            navigator.clipboard.writeText(text).then(() => {
+            window.copyTextToClipboard(text).then(() => {
                 const icon = btn.querySelector('i');
                 const oldClass = icon.className;
                 icon.className = 'fas fa-check text-brand-600';

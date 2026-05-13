@@ -695,8 +695,9 @@ ARAHAN KHAS:
         function copyPromptGenerator() {
             const outputText = document.getElementById('outputGenerator').value;
             if (!outputText) return;
-            navigator.clipboard.writeText(outputText);
-            alert('Prompt disalin ke papan klip!');
+            window.copyTextToClipboard(outputText).then(() => {
+                alert('Prompt disalin ke papan klip!');
+            });
         }
 
         // Modal Logic
@@ -1083,14 +1084,15 @@ ${promptContent}
 
         function copyText(btn) {
             const content = btn.getAttribute('data-content');
-            navigator.clipboard.writeText(content);
-            const originalHtml = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check"></i> Berjaya Disalin';
-            btn.className = btn.className.replace('bg-brand-600', 'bg-green-600').replace('bg-amber-600', 'bg-green-600').replace('bg-slate-900', 'bg-green-600');
-            setTimeout(() => {
-                btn.innerHTML = originalHtml;
-                btn.className = btn.className.replace('bg-green-600', btn.getAttribute('data-bg') || 'bg-brand-600');
-            }, 2000);
+            window.copyTextToClipboard(content).then(() => {
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Berjaya Disalin';
+                btn.className = btn.className.replace('bg-brand-600', 'bg-green-600').replace('bg-amber-600', 'bg-green-600').replace('bg-slate-900', 'bg-green-600');
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.className = btn.className.replace('bg-green-600', btn.getAttribute('data-bg') || 'bg-brand-600');
+                }, 2000);
+            });
         }
 
         function closeModal() {
@@ -1099,8 +1101,9 @@ ${promptContent}
 
         function copyModalPrompt() {
             const content = document.getElementById('modalContent').innerText;
-            navigator.clipboard.writeText(content);
-            alert('Prompt disalin!');
+            window.copyTextToClipboard(content).then(() => {
+                alert('Prompt disalin!');
+            });
         }
 
         // Close on overlay click
