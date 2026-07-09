@@ -1,6 +1,6 @@
 /* Pendidik AI - Guestbook Logic (2026) */
 
-const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwntdf3Dl2cFrHyWKfm8aDxqqCcguZk5z0ABjP0wxepaYxy3tk3OnaESFkXOFH3DiiFTQ/exec';
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyaF_akO2usKrIruL6fKBvKNerrlb1EuSKJMsHyie0ruNfiA2F6KjNW0Sr7wb38nWa_/exec';
 let allMessages = [];
 let currentPage = 0;
 const perPage = 6;
