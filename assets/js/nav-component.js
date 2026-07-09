@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <!-- Logo -->
             <a href="index.html" class="flex items-center gap-2 group">
                 <div class="w-10 h-10 ${accent === 'gem' ? 'bg-gem-600' : (accent === 'teal' ? 'bg-teal-600' : 'bg-brand-600')} rounded-xl flex items-center justify-center text-white shadow-lg transition-transform group-hover:scale-105">
-                    <i class="fas ${accent === 'gem' ? 'fa-gem' : (accent === 'magic' ? 'fa-wand-sparkles' : 'fa-sparkles')}"></i>
+                    <span class="font-display font-extrabold text-sm tracking-tight">CJ</span>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-display font-bold text-lg ${theme === 'light' ? 'text-slate-800' : 'text-white'} leading-tight">
