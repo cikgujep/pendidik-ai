@@ -872,9 +872,8 @@ Use cinematic lighting, ultra-realistic reflections, premium color grading, shar
             const resetBtn = document.getElementById('reset-btn');
             const copyBtn = document.getElementById('copy-btn');
             
-            const apiKey = "AIzaSyB0wIx9IhbTjqaA8nBDR2g8dAKHYDo-3lQ";
-            // Using gemini-1.5-flash for better stability, or gemini-2.0-flash if preferred
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+            const apiKey = "sk-2d7b05e312ba482c9604688da80b97d5";
+            const apiUrl = "https://api.deepseek.com/chat/completions";
 
             if (generateBtn) {
                 generateBtn.addEventListener('click', async () => {
@@ -903,16 +902,19 @@ Use cinematic lighting, ultra-realistic reflections, premium color grading, shar
 
                     try {
                         const promptBody = {
-                            contents: [{
-                                parts: [{
-                                    text: `You are a professional AI image prompt engineer. Convert these keywords into ONE cohesive, detailed, and artistic English prompt for Imagen 3/Midjourney/DALL-E 3. Focus on realism and cinematic quality. Output ONLY the prompt text without any explanations or quotes.\n\nKeywords:\n${filledInputs}`
-                                }]
+                            model: 'deepseek-v4-flash',
+                            messages: [{
+                                role: 'user',
+                                content: `You are a professional AI image prompt engineer. Convert these keywords into ONE cohesive, detailed, and artistic English prompt for Imagen 3/Midjourney/DALL-E 3. Focus on realism and cinematic quality. Output ONLY the prompt text without any explanations or quotes.\n\nKeywords:\n${filledInputs}`
                             }]
                         };
 
                         const response = await fetch(apiUrl, {
                             method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${apiKey}`
+                            },
                             body: JSON.stringify(promptBody)
                         });
 
@@ -922,9 +924,9 @@ Use cinematic lighting, ultra-realistic reflections, premium color grading, shar
                         }
 
                         const data = await response.json();
-                        
-                        if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0]) {
-                            const output = data.candidates[0].content.parts[0].text;
+
+                        if (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
+                            const output = data.choices[0].message.content;
                             resultTextarea.value = output.trim();
                         } else {
                             throw new Error("Respon AI tidak lengkap atau disekat oleh penapis keselamatan.");
